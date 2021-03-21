@@ -5,10 +5,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Remote Controller Web Interface</title>
+    <link rel="stylesheet" href="index/index.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
+    <script defer src="index/index.js"></script>
 </head>
 
 <body>
+    <div id="statusContainer">
+        <button onclick="
+            fetch('./status_checking_file_lol').then(res=>{
+                document.getElementById('statusText').innerText=
+                    res.status==200?
+                    '✅ Yay! Seems like the server is up and running &nbsp':
+                    '❌ Hmmm... Something\'s wrong with the server &nbsp';
+                document.getElementById('statusText').innerText+=res.status
+            })
+        ">🔄</button>
+        <div id=statusText>
+            Click the button to check connection to the server
+        </div>
+    </div>
+
 </body>
 
 </html>

@@ -1,0 +1,28 @@
+*{
+    font-family: "Roboto";
+}
+
+body{
+    background-color:#121212;
+    color:white;
+}
+
+#statusContainer{
+    border-radius: 8px;
+    background-color:#202020;
+    padding:5px;
+    display:flex;
+}
+
+#statusContainer *{
+    font-size:25px;
+}
+
+#statusContainer button{
+    background:#3333339f;
+    padding:0px;
+    margin: 0px;
+    margin-right: 20px;
+    border-radius: 5px;
+    border:none;
+}
