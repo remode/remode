@@ -8,9 +8,10 @@ let hostname = ip.address("Wi-Fi");
 
 const server = http.createServer((req, res) => {
     if (req.method == "GET") {
-        fs.readFile((req.url == "/") ? "index.html" : req.url, (err, data) => {
+        req.url = "." + req.url;
+        fs.readFile((req.url == "./") ? "index.html" : req.url, (err, data) => {
             if (err) {
-                console.error(err.code)
+                console.error(`${err.code}:${req.url}`)
                 switch (err.code) {
                     case "ENOENT":
                         res.statusCode = 404;
