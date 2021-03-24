@@ -2,24 +2,70 @@
     font-family: "Roboto";
 }
 
+html,body,.main-container{
+    height: 100%;
+}
+
 body{
     background-color:#121212;
     color:white;
+    margin:0px;
+}
+
+.main-container{
+    display:flex;
+    flex-direction: column;
+}
+
+.input{
+    flex-grow: 95;
+    background-color:#202020;
+    border-radius:8px;
+    display: flex;
+    flex-direction: column;
+}
+
+.title{
+    font-size: 5vw;
+    font-style: italic;
+    font-weight: 700;
+    margin: auto;
+    width: max-content;
+    text-align: center;
+}
+
+#keyboardInput{
+    flex-grow:90;
+    margin: 10px;
+    background: #ffffff3d;
+    border-radius: 8px;
+    font-size:30px;
+    text-align: center;
+}
+
+#keyboardInput:focus{
+    outline: none;
 }
 
 #statusContainer{
+    margin-bottom: 0.5%;
+    flex-grow: 1;
     border-radius: 8px;
-    background-color:#202020;
+    background-color:#50505091;
     padding:5px;
     display:flex;
 }
 
 #statusContainer *{
-    font-size:25px;
+    font-size: 3.5vh;
+    margin: auto;
+    margin-left: 0px;
+    width: max-content;
+    text-align: center;
 }
 
 #statusContainer button{
-    background:#3333339f;
+    background:#b8b8b841;
     padding:0px;
     margin: 0px;
     margin-right: 20px;

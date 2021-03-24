@@ -13,8 +13,12 @@
 </head>
 
 <body>
-    <div id="statusContainer">
-        <button onclick="
+
+    <div class="main-container">
+
+
+        <div id="statusContainer">
+            <button onclick="
             fetch('./status_checking_file_lol').then(res=>{
                 document.getElementById('statusText').innerText=
                     res.status==200?
@@ -23,10 +27,19 @@
                 document.getElementById('statusText').innerText+=res.status
             })
         ">🔄</button>
-        <div id=statusText>
-            Click the button to check connection to the server
+            <div id=statusText>
+                Click the button to check connection to the server
+            </div>
+        </div>
+        <div class="input">
+            <div class="title">
+                Write stuff in the box ⬇
+            </div>
+            <input type="text" id="keyboardInput">
         </div>
     </div>
+
+
 
 </body>
 
