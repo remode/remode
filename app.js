@@ -41,6 +41,8 @@ const server = http.createServer((req, res) => {
         req.on('end', function () {
             var post = qs.parse(body);
             console.log(post);
+            res.statusCode = 200;
+            res.end()
         });
     }
 
