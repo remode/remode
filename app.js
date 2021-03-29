@@ -1,6 +1,7 @@
 const http = require('http');
 const fs = require('fs');
 const ip = require('ip');
+const spawn = require("child_process").spawn
 
 const port = 3000;
 let hostname = ip.address("Wi-Fi");
@@ -40,6 +41,7 @@ const server = http.createServer((req, res) => {
         req.on('end', function () {
             var post = JSON.parse(body);
             console.log(post);
+            spawn("python3", ["./pythonScripts/keypress.py", post.value])
             res.statusCode = 200;
             res.end()
         });
