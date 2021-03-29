@@ -9,7 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "ip": "^1.1.5",
-    "qs": "^6.10.1"
+    "ip": "^1.1.5"
   }
 }

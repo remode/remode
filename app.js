@@ -1,6 +1,5 @@
 const http = require('http');
 const fs = require('fs');
-const qs = require('qs');
 const ip = require('ip');
 
 const port = 3000;
@@ -39,7 +38,7 @@ const server = http.createServer((req, res) => {
         });
 
         req.on('end', function () {
-            var post = qs.parse(body);
+            var post = JSON.parse(body);
             console.log(post);
             res.statusCode = 200;
             res.end()

@@ -19,7 +19,7 @@ function postData(data) {
     fetch('192.168.1.1:3000', {
         method: 'POST', // or 'PUT'
         headers: {
-            'Content-Type': 'text',
+            'Content-Type': 'application/json',
         },
         body: JSON.stringify(data),
     })
