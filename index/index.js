@@ -1,9 +1,11 @@
 let keyboardInputElement = document.getElementById("keyboardInput")
+let passwordInputElement = document.getElementById("passwordInput")
 
 keyboardInputElement.oninput = function () {
     if (keyboardInputElement.value != "") {
         postData(
             {
+                "passwd": passwordInputElement.value,
                 "type": "keyInput",
                 "value": keyboardInputElement.value[keyboardInputElement.value.length - 1],
             }

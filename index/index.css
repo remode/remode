@@ -43,8 +43,19 @@ body{
     text-align: center;
 }
 
-#keyboardInput:focus{
+#passwordInput{
+    flex-grow:3;
+    margin: 10px;
+    background: #ffffff3d;
+    border-radius: 8px;
+    font-size:15px;
+    /* text-align: center; */
+}
+
+#keyboardInput:focus, #passwordInput:focus{
     outline: none;
+    transition-duration: 500ms;
+    background: #ffffff57;
 }
 
 #statusContainer{

@@ -6,6 +6,9 @@ const spawn = require("child_process").spawn
 const port = 3000;
 let hostname = ip.address("Wi-Fi");
 
+const config = JSON.parse(fs.readFileSync("config.json", "utf8"));
+const password = config.password;
+
 const server = http.createServer((req, res) => {
     if (req.method == "GET") {
         req.url = "." + req.url;
@@ -41,13 +44,13 @@ const server = http.createServer((req, res) => {
         req.on('end', function () {
             var post = JSON.parse(body);
             console.log(post);
-            spawn("python3", ["./pythonScripts/keypress.py", post.value])
+            if (post.passwd === password) {
+                spawn("python3", ["./pythonScripts/keypress.py", post.value])
+            }
             res.statusCode = 200;
             res.end()
         });
     }
-
-
 });
 
 server.listen(port, hostname, () => {
