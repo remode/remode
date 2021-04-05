@@ -17,15 +17,7 @@
     <div class="main-container">
 
         <div id="statusContainer">
-            <button onclick="
-            fetch('./status_checking_file_lol').then(res=>{
-                document.getElementById('statusText').innerText=
-                    res.status==200?
-                    '✅ Yay! Seems like the server is up and running &nbsp':
-                    '❌ Hmmm... Something\'s wrong with the server &nbsp';
-                document.getElementById('statusText').innerText+=res.status
-            })
-        ">🔄</button>
+            <button onclick="checkStatus()">🔄</button>
             <div id=statusText>
                 Click the button to check connection to the server
             </div>
