@@ -1,3 +1,4 @@
 {
-    "password": "VerySecurePassword"
+    "password": "VerySecurePassword",
+    "banlist": []
 }
