@@ -25,15 +25,6 @@ body{
     flex-direction: column;
 }
 
-.title{
-    font-size: 5vw;
-    font-style: italic;
-    font-weight: 700;
-    margin: auto;
-    width: max-content;
-    text-align: center;
-}
-
 #keyboardInput{
     flex-grow:90;
     margin: 10px;
@@ -82,4 +73,25 @@ body{
     margin-right: 20px;
     border-radius: 5px;
     border:none;
+}
+
+.extra-keys{
+    border-radius:8px;
+    flex-grow: 5;
+    margin: 0px 10px;
+    padding:0px;
+    background: #ffffff3d;
+    display: flex;
+    flex-direction: row;
+}
+.extra-keys:focus{
+    transition-duration: 500ms;
+    background: #ffffff57;
+}
+
+.extra-keys button{
+    min-height: auto;
+    flex-grow: 1;
+    border-radius: 8px;
+    margin: 5px;
 }
