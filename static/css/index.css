@@ -19,7 +19,7 @@ body{
 
 .input{
     flex-grow: 95;
-    background-color:#202020;
+    background-color:#50505091;
     border-radius:8px;
     display: flex;
     flex-direction: column;

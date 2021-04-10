@@ -1,3 +1,47 @@
+const express = require('express')
+const path = require('path')
+const fs = require('fs');
+const ip = require('ip');
+const spawn = require("child_process").spawn
+const config = require('./config');
+
+const app = express();
+const hostname = config.listen.hostname === "" ?
+    ip.address(config.listen.interfaceName) : config.listen.hostname;
+const port = config.listen.port;
+
+let password = config.password;
+let bannedIps = config.bannedIps;
+let banQueue = []
+
+setInterval(() => {
+    bannedIps = JSON.parse(fs.readFileSync("banlist.json", "utf8"));
+    bannedIps = [...banQueue, ...bannedIps]; //Append the newly banned IPs to the start of the list
+    banQueue = [];
+    fs.writeFileSync("banlist.json", JSON.stringify(bannedIps, null, "    "));
+}, config.banUpdateInterval);
+
+app.get('/', function (req, res) {
+    console.log(`${req.socket.remoteAddress} is trying to connect`);
+    if (!bannedIps.includes(req.socket.remoteAddress)) {
+        res.sendFile(path.join(__dirname + '/index.html'));
+        console.log(`${req.socket.remoteAddress} is successful`);
+    }
+    else {
+        res.send(`<h1>Sorry... This ip was banned<br>
+        Please contact the host to fix the problem<br>
+        If <span style="color:red">you</span> are the host, please check your config.js
+        file and make sure you didn't accidentally ban yourself</h1>`);
+        console.log(`${req.socket.remoteAddress} is unsuccessful, the ip was banned`);
+    }
+});
+
+app.use("/static", express.static("static"));
+
+app.listen(port, hostname, () => {
+    console.log(`Example app listening at http://${hostname}:${port}`);
+})
+
 //-------OLD CODE----------
 
 // const http = require('http');
