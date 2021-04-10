@@ -18,7 +18,7 @@ keyboardInputElement.oninput = function () {
 
 function postData(data) {
 
-    fetch('192.168.1.1:3000', {
+    fetch('/', {
         method: 'POST', // or 'PUT'
         headers: {
             'Content-Type': 'application/json',

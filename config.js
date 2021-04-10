@@ -2,7 +2,7 @@ const fs = require('fs');
 
 var config =
 {
-    password: "VerySecurePassword",
+    password: "",
     bannedIps: JSON.parse(fs.readFileSync("banlist.json", "utf-8")),
     banUpdateInterval: 10000,   //In milliseconds
     listen: {
