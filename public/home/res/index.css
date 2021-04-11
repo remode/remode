@@ -6,6 +6,10 @@
     font-weight: 100;
 }
 
+::selection{
+    background:#a0bcf02d
+}
+
 body{
     background-color: #121212;
     padding: 0px;
@@ -60,4 +64,49 @@ body{
 .mod-menu-title{
     font-size: 30px;
     padding: 5px 40px;
+}
+
+.mod-element{
+    height: 70px;
+    width: 280px;
+    margin: 10px;
+    padding: 5px;
+    border: 1px solid #eeeeee;
+}
+
+.mod-icon{
+    float: left;
+    height: 70px;
+    width: 70px;
+    margin-right: 10px;
+}
+
+.mod-info{
+    height: 70px;
+}
+
+.mod-title{
+    font-size:1.3em;
+}
+
+.mod-title-underline-wrapper{
+    display: grid;
+    place-items: center;
+}
+
+.mod-title-underline-animation{
+    background-color: #eeeeee;
+    border-radius: 0px;
+    height: 1px;
+    width: 0%;
+    transition-duration: 400ms;
+    transition-timing-function: ease;
+}
+
+.mod-element:hover .mod-title-underline-animation{
+    width: 100%;
+}
+
+.mod-description{
+
 }

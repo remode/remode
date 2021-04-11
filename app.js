@@ -64,6 +64,18 @@ app.post("/", function (req, res) {
     }
 });
 
+app.get('/modList', function (req, res) {
+    fs.readdir("./public/mods", (err, files) => {
+        let modNames = files;
+        let modPaths = modNames.map(modName => "/public/mods/" + modName);
+        res.send({
+            modPaths: modPaths,
+            modNames: modNames,
+            modCount: files.length
+        })
+    });
+})
+
 app.listen(port, hostname, () => {
     console.log(`Example app listening at http://${hostname}:${port}`);
 })

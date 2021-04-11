@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home | Remote Controller</title>
     <link rel="stylesheet" href="/public/home/res/index.css">
+    <script defer src="/public/home/res/index.js"></script>
 </head>
 
 <body>
@@ -27,7 +28,22 @@
                     Please select a mod:
                 </div>
                 <div id="modMenuList">
-
+                    <template id="modElementTemplate">
+                        <div class="mod-element">
+                            <img src="/public/default/res/images/modicon.png" class="mod-icon" alt="">
+                            <div class="mod-info">
+                                <div class="mod-title">
+                                    Mod title
+                                    <div class="mod-title-underline-wrapper">
+                                        <div class="mod-title-underline-animation"></div>
+                                    </div>
+                                </div>
+                                <div class="mod-description">
+                                    This is an example mod description
+                                </div>
+                            </div>
+                        </div>
+                    </template>
                 </div>
             </div>
         </div>
