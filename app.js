@@ -24,7 +24,7 @@ setInterval(() => {
 app.get('/', function (req, res) {
     console.log(`${req.socket.remoteAddress} is trying to connect`);
     if (!bannedIps.includes(req.socket.remoteAddress)) {
-        res.sendFile(path.join(__dirname + '/index.html'));
+        res.sendFile(path.join(__dirname + '/public/home/index.html'));
         console.log(`${req.socket.remoteAddress} is successful`);
     }
     else {
@@ -36,7 +36,7 @@ app.get('/', function (req, res) {
     }
 });
 
-app.use("/static", express.static("static"));
+app.use('/public', express.static(path.join(__dirname, 'public')))
 
 app.use(express.json())
 

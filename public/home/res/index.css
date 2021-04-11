@@ -1,0 +1,63 @@
+@import url(/public/lib/Roboto.css);
+
+*{    
+    color: #eeeeee;
+    font-family: Roboto;
+    font-weight: 100;
+}
+
+body{
+    background-color: #121212;
+    padding: 0px;
+}
+
+.title-wrapper{
+    display: grid;
+    place-items: center;
+}
+
+.title-wrapper a{
+    text-decoration: none;
+}
+
+.title {
+    font-family: Roboto;
+    font-weight: 100;
+    font-size: 65px;
+}
+
+.underline-wrapper{
+    display: grid;
+    place-items: center;
+}
+
+.underline-animation{
+    background-color: #eeeeee;
+    border-radius: 0px;
+    height: 2px;
+    width: 0%;
+    transition-duration: 400ms;
+    transition-timing-function: ease;
+}
+
+.title:hover .underline-animation{
+    width: 100%;
+}
+
+.mod-menu-wrapper{
+    display: grid;
+    place-items: center;
+}
+
+.mod-menu{
+    background-color: #00000032;
+    margin-top: 10px;
+    display: grid;
+    place-items: center;
+    max-width: 80%;
+}
+
+.mod-menu-title{
+    font-size: 30px;
+    padding: 5px 40px;
+}
