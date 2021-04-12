@@ -1,0 +1,30 @@
+[
+    {
+        "modId": "testmod1",
+        "modName": "Test Mod 1",
+        "modDesc": "This is a test case 1",
+        "modDescHover": "This is a test case 1 hover",
+        "modPath": ""
+    },
+    {
+        "modId": "testmod2",
+        "modName": "Test Mod 2",
+        "modDesc": "This is a test case 2",
+        "modDescHover": "This is a test case 2 hover",
+        "modPath": ""
+    },
+    {
+        "modId": "testmod3",
+        "modName": "Test Mod 3",
+        "modDesc": "This is a test case 3",
+        "modDescHover": "This is a test case 3 hover",
+        "modPath": ""
+    },
+    {
+        "modId": "testmod4",
+        "modName": "Test Mod 4",
+        "modDesc": "This is a test case 4",
+        "modDescHover": "This is a test case 4 hover",
+        "modPath": ""
+    }
+]

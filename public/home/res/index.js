@@ -4,17 +4,23 @@ function loadMods() {
     fetch('/modList')
         .then(response => response.json())
         .then(data => {
-            for (let i = 0; i < data.modCount; i++) {
-                modMenuListElement.appendChild(createModElement(data.modNames[i], data.modPaths[i]));
-            }
+            data.forEach(modProperties => {
+                modMenuListElement.appendChild(createModElement(modProperties));
+            });
         });
 }
 
-function createModElement(name, path) {
+function createModElement(modProperties) {
     if ('content' in document.createElement('template')) {
         let modElementTemplate = document.getElementById("modElementTemplate").content.cloneNode(true);
-        modElementTemplate.querySelector(".mod-title").innerText = name
-        modElementTemplate
+        modElementTemplate.querySelector(".mod-title-text").innerText = modProperties.modName;
+        modElementTemplate.querySelector(".mod-description").innerText = modProperties.modDesc;
+        modElementTemplate.querySelector(".mod-description").title = modProperties.modDescHover;
+        if (modProperties.modIcon)
+            modElementTemplate.querySelector(".mod-icon").src =
+                `${modProperties.modPath}/${modProperties.modIcon}`;
+        modElementTemplate.querySelector(".mod-link").href = modProperties.modPath;
+
         return modElementTemplate;
     }
     else {

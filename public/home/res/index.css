@@ -28,6 +28,7 @@ body{
     font-family: Roboto;
     font-weight: 100;
     font-size: 65px;
+    text-align: center;
 }
 
 .underline-wrapper{
@@ -58,18 +59,47 @@ body{
     margin-top: 10px;
     display: grid;
     place-items: center;
-    max-width: 80%;
+    width: 90%;
 }
 
 .mod-menu-title{
     font-size: 30px;
     padding: 5px 40px;
+    text-align: center;
+}
+
+#modMenuList{
+    width : 100%;
+    display: grid;
+    grid-template-columns: 100%;
+    
+}
+
+@media(min-width: 690px){
+    #modMenuList{
+        grid-template-columns: repeat(2,50%);
+    }
+}
+
+@media(min-width: 1050px){
+    #modMenuList{
+        grid-template-columns: repeat(3,33%);
+    }
+}
+
+.mod-link{
+    text-decoration: none;
+}
+
+.mod-element-wrapper{
+    height: 100%;
+    width: 100%;
 }
 
 .mod-element{
     height: 70px;
     width: 280px;
-    margin: 10px;
+    margin: 10px auto;
     padding: 5px;
     border: 1px solid #eeeeee;
 }
@@ -108,5 +138,5 @@ body{
 }
 
 .mod-description{
-
+    font-size: 0.8em;
 }

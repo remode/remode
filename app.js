@@ -66,13 +66,25 @@ app.post("/", function (req, res) {
 
 app.get('/modList', function (req, res) {
     fs.readdir("./public/mods", (err, files) => {
-        let modNames = files;
-        let modPaths = modNames.map(modName => "/public/mods/" + modName);
-        res.send({
-            modPaths: modPaths,
-            modNames: modNames,
-            modCount: files.length
-        })
+        let modList = [];
+        files.forEach(modPath => {
+            try {
+                let modProp = JSON.parse(fs.readFileSync(`./public/mods/${modPath}/modconfig.json`, "utf8"));
+                modProp["modPath"] = "/public/mods/" + modPath;
+                modList.push(modProp);
+            } catch (error) {
+                modList.push(
+                    {
+                        "modId": "unknown",
+                        "modName": "Unknown Mod",
+                        "modDesc": `modPath:"${modPath}", "config.json" file not found`,
+                        "modDescHover": JSON.stringify(error),
+                        "modPath": modPath
+                    }
+                )
+            }
+        });
+        res.send(modList);
     });
 })
 
