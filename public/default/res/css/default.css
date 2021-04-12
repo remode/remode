@@ -1,0 +1,26 @@
+@import url(/public/lib/Roboto.css);
+
+*{    
+    color: #eeeeee;
+    font-family: Roboto;
+    font-weight: 100;
+}
+
+::selection{
+    background:#a0bcf02d
+}
+
+body{
+    background-color: #121212;
+    padding: 0px;
+}
+
+::-webkit-scrollbar{
+    background: #121212;
+    width: 7px;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#b6b6b66c;
+    border-radius: 3px;
+}
