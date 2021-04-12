@@ -6,6 +6,7 @@ const spawn = require("child_process").spawn
 const config = require('./config');
 
 const app = express();
+const router = express.Router();
 const hostname = config.listen.hostname === "" ?
     ip.address(config.listen.interfaceName) : config.listen.hostname;
 const port = config.listen.port;
@@ -40,27 +41,14 @@ app.use('/public', express.static(path.join(__dirname, 'public')))
 
 app.use(express.json())
 
-app.post("/", function (req, res) {
+app.post('/post/keyboard', (req, res) => {
     let body = req.body;
+    console.log(body)
     if (body.passwd === password && !bannedIps.includes(req.socket.remoteAddress)) {
-        switch (body.type) {
-            case "keyInput":
-                console.log(`keyInput "${body.value}" from ${req.socket.remoteAddress}`);
-                spawn("python3", ["./pythonScripts/keypress.py", body.value]).on("exit", (code) => {
-                    res.status = code === 0 ? 200 : 500
-                })
-                break;
-            case "mouseInput":
-                console.log(`mouseInput ${body.value} from ${req.socket.remoteAddress}`);
-                res.status = 501; // Not implemented yet
-                break;
-            case "gamepadInput":
-                console.log(`gamepadInput ${body.value} from ${req.socket.remoteAddress}`);
-                res.status = 501; //Not implemented yet
-                break;
-            default:
-                break;
-        }
+        console.log(`keyInput "${body.value}" from ${req.socket.remoteAddress}`);
+        spawn("python3", ["./pythonScripts/keypress.py", body.value]).on("exit", (code) => {
+            res.status = code === 0 ? 200 : 500
+        });
     }
 });
 
@@ -86,7 +74,7 @@ app.get('/modList', function (req, res) {
         });
         res.send(modList);
     });
-})
+});
 
 app.listen(port, hostname, () => {
     console.log(`Example app listening at http://${hostname}:${port}`);

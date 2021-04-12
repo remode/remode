@@ -9,7 +9,9 @@
     <link rel="stylesheet" href="./res/css/index.css">
     <link rel=" preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
-    <script defer src="./static/js/index.js"></script>
+    <script defer src="./res/js/index.js"></script>
+    <script defer src="/public/lib/postData.js"></script>
+    <script defer src="/public/lib/sendKey.js"></script>
 </head>
 
 <body>
@@ -32,7 +34,8 @@
                 <button></button>
                 <button></button>
             </div>
-            <input type="text" id="keyboardInput" placeholder="Click to open keyboard" autocapitalize="off"
+            <!-- type=email because mobile keyboard suck -->
+            <input type="email" id="keyboardInput" placeholder="Click to open keyboard" autocapitalize="none"
                 autocomplete="off">
         </div>
     </div>
