@@ -47,7 +47,7 @@ app.post('/post/keyboard', (req, res) => {
     if (body.passwd === password && !bannedIps.includes(req.socket.remoteAddress)) {
         console.log(`keyInput "${body.value}" from ${req.socket.remoteAddress}`);
         spawn("python3", ["./pythonScripts/keypress.py", body.value]).on("exit", (code) => {
-            res.status = code === 0 ? 200 : 500
+            res.status(code === 0 ? 200 : 500).send(["ok", code]);
         });
     }
 });
