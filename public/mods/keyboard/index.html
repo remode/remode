@@ -12,21 +12,25 @@
     <script defer src="./res/js/index.js"></script>
     <script defer src="/public/lib/postData.js"></script>
     <script defer src="/public/lib/sendKey.js"></script>
+    <link rel="shortcut icon" href="modicon.png" type="image/png">
 </head>
 
 <body>
-
-    <div class="main-container">
-
-        <div id="statusContainer">
-            <button onclick="checkStatus()">🔄</button>
-            <div id=statusText>
-                Click the button to check connection to the server
+    <div class="title-wrapper">
+        <a href="/">
+            <div class="title">
+                Remote Controller
+                <div class="underline-wrapper">
+                    <div class="underline-animation"></div>
+                </div>
             </div>
-        </div>
-
+        </a>
+    </div>
+    <div class="main-container">
         <div class="input">
-            <input type="text" id="passwordInput" placeholder="Enter host password">
+            <div class="password-div">
+                <input type="text" id="passwordInput" placeholder="Enter host password">
+            </div>
             <div class="extra-keys">
                 <button></button>
                 <button></button>

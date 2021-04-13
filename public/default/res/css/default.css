@@ -24,3 +24,37 @@ body{
     background:#b6b6b66c;
     border-radius: 3px;
 }
+
+.title-wrapper{
+    display: grid;
+    place-items: center;
+}
+
+.title-wrapper a{
+    text-decoration: none;
+}
+
+.title {
+    font-family: Roboto;
+    font-weight: 100;
+    font-size: 65px;
+    text-align: center;
+}
+
+.underline-wrapper{
+    display: grid;
+    place-items: center;
+}
+
+.underline-animation{
+    background-color: #eeeeee;
+    border-radius: 0px;
+    height: 2px;
+    width: 0%;
+    transition-duration: 400ms;
+    transition-timing-function: ease;
+}
+
+.title:hover .underline-animation{
+    width: 100%;
+}
