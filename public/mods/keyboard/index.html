@@ -32,18 +32,17 @@
                 <input type="text" id="passwordInput" placeholder="Enter host password">
             </div>
             <div class="extra-keys">
-                <button></button>
-                <button></button>
-                <button></button>
-                <button></button>
-                <button></button>
+                <toggleable-element>Control</toggleable-element>
+                <toggleable-element>Shift</toggleable-element>
+                <toggleable-element>Alt</toggleable-element>
+                <toggleable-element></toggleable-element>
             </div>
             <!-- type=email because mobile keyboard suck -->
             <input type="email" id="keyboardInput" placeholder="Click to open keyboard" autocapitalize="none"
                 autocomplete="off">
         </div>
     </div>
-
+    <script src="/public/lib/toggleElement.js"></script>
 </body>
 
 </html>

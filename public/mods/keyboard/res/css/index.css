@@ -1,7 +1,6 @@
 @import url(/public/default/res/css/default.css);
 
 *{
-    font-family: "Roboto";
     font-weight: 300;
 }
 
@@ -20,26 +19,33 @@ body{
 
 .input{
     flex-grow: 95;
-    background-color:#50505091;
-    border-radius:8px;
+    background-color: #0e0e0e4f;
+    margin: 0px 15px;
     display: flex;
     flex-direction: column;
 }
 
 #keyboardInput{
+    transition-duration: 200ms;
     flex-grow:90;
     margin: 10px;
-    background: #ffffff3d;
-    border-radius: 8px;
+    background: #31313124;
+    border: 1px solid #eeeeee;
     font-size:30px;
     text-align: center;
 }
 
-#passwordInput{
+.password-div{
+    display: flex;
     flex-grow:3;
     margin: 10px;
-    background: #ffffff3d;
-    border-radius: 8px;
+    flex-direction: row;
+}
+
+#passwordInput{
+    flex-grow: 9;
+    background: #31313124;
+    border: 1px solid #eeeeee;
     font-size:15px;
     /* text-align: center; */
 }
@@ -47,7 +53,7 @@ body{
 #keyboardInput:focus, #passwordInput:focus{
     outline: none;
     transition-duration: 500ms;
-    background: #ffffff57;
+    background: #4e4e4e57;
 }
 
 #statusContainer{
@@ -77,22 +83,27 @@ body{
 }
 
 .extra-keys{
-    border-radius:8px;
     flex-grow: 5;
     margin: 0px 10px;
     padding:0px;
-    background: #ffffff3d;
     display: flex;
     flex-direction: row;
 }
-.extra-keys:focus{
-    transition-duration: 500ms;
+
+
+.extra-keys toggleable-element{
+    display: grid;
+    place-items: center;
+    min-height: 30px;
+    flex-grow: 1;
+    margin: 5px;
+    background-color:#242424;
     background: #ffffff57;
+    border: 1px solid #eeeeee;
+    transition-duration: 200ms;
 }
 
-.extra-keys button{
-    min-height: auto;
-    flex-grow: 1;
-    border-radius: 8px;
-    margin: 5px;
+.extra-keys toggleable-element[state="on"]{
+    border: 4px solid #eeeeee;
+    outline: none;
 }
