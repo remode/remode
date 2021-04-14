@@ -77,5 +77,5 @@ app.get('/modList', function (req, res) {
 });
 
 app.listen(port, hostname, () => {
-    console.log(`Example app listening at http://${hostname}:${port}`);
+    console.log(`Remode server listening at http://${hostname}:${port}`);
 })
