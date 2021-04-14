@@ -82,7 +82,7 @@ body{
     border:none;
 }
 
-.extra-keys{
+.extra-keys div{
     flex-grow: 5;
     margin: 0px 10px;
     padding:0px;
@@ -91,10 +91,11 @@ body{
 }
 
 
-.extra-keys toggleable-element{
+.extra-keys div toggleable-element,.extra-keys div button{
     display: grid;
     place-items: center;
-    min-height: 30px;
+    min-height: 50px;
+    flex:3;
     flex-grow: 1;
     margin: 5px;
     background-color:#242424;
@@ -103,7 +104,14 @@ body{
     transition-duration: 200ms;
 }
 
-.extra-keys toggleable-element[state="on"]{
+.extra-keys div toggleable-element[state="on"], .extra-keys div button:active{
     border: 4px solid #eeeeee;
+}
+
+.extra-keys div button{
+    transition-duration: 100ms;
+}
+
+.extra-keys div button:focus{
     outline: none;
 }
