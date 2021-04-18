@@ -91,7 +91,7 @@ body{
 }
 
 
-.extra-keys div toggleable-element,.extra-keys div button{
+.extra-keys div :is(toggleable-element, clickable-element){
     display: grid;
     place-items: center;
     min-height: 50px;
@@ -104,7 +104,7 @@ body{
     transition-duration: 200ms;
 }
 
-.extra-keys div toggleable-element[state="on"], .extra-keys div button:active{
+.extra-keys div :is(toggleable-element[state="on"], clickable-element[state="on"]){
     border: 4px solid #eeeeee;
 }
 
