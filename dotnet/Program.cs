@@ -13,32 +13,70 @@ namespace dotnet
         {
             System.Threading.Thread.Sleep(2000);
 
-            string emoji = "👌";
+            string pressString = args[0];
 
+            Console.WriteLine(pressString);
+
+            PressString("Hello World!👋");
+            PressKey((ushort)WinapiKeys.VirtualKeyShort.RETURN);
+
+        }
+
+        /// <summary> Presses the characters in string using SendKey.</summary>
+        /// <param name="inputString">The string to press</param>
+        static void PressString(string inputString)
+        {
             Input[] inputs = new Input[]
             {
                 new Input
                 {
                     type = (int)InputType.Keyboard,
-                    u = new InputUnion
-                    {
-                        ki = new KeyboardInput
-                        {
+                    u = new InputUnion{
+                        ki = new KeyboardInput{
                             wVk = 0x0,
-                            wScan = (ushort)emoji[0],
-                            dwFlags = (uint)(KeyEventF.KeyDown | KeyEventF.Unicode),
                             dwExtraInfo = GetMessageExtraInfo()
                         }
                     }
                 }
             };
 
+            for (int i = 0; i < inputString.Length; i++)
+            {
+                inputs[0].u.ki.wScan = (ushort)inputString[i];
+
+                inputs[0].u.ki.dwFlags = (uint)(KeyEventF.KeyDown | KeyEventF.Unicode);
+                SendInput((uint)inputs.Length, inputs, Marshal.SizeOf(typeof(Input)));
+
+                inputs[0].u.ki.dwFlags = (uint)(KeyEventF.KeyUp | KeyEventF.Unicode);
+                SendInput((uint)inputs.Length, inputs, Marshal.SizeOf(typeof(Input)));
+            }
+        }
+
+        /// <summary>Presses a key.</summary>
+        /// <param name="wVK">Virtual Key Code of the key</param>
+        static void PressKey(ushort wVK)
+        {
+            Input[] inputs = new Input[]
+            {
+                new Input
+                {
+                    type = (int)InputType.Keyboard,
+                    u = new InputUnion{
+                        ki = new KeyboardInput{
+                            wVk = wVK,
+                            dwExtraInfo = GetMessageExtraInfo()
+                        }
+                    }
+                }
+            };
+
+            inputs[0].u.ki.dwFlags = (uint)(KeyEventF.KeyDown);
             SendInput((uint)inputs.Length, inputs, Marshal.SizeOf(typeof(Input)));
 
-            inputs[0].u.ki.wScan = (ushort)emoji[1];
-
+            inputs[0].u.ki.dwFlags = (uint)(KeyEventF.KeyUp);
             SendInput((uint)inputs.Length, inputs, Marshal.SizeOf(typeof(Input)));
         }
 
     }
+
 }
