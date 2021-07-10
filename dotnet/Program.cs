@@ -26,6 +26,7 @@ namespace dotnet
         /// <param name="inputString">The string to press</param>
         static void PressString(string inputString)
         {
+            if (inputString.Length == 0) return;
             Input[] inputs = new Input[]
             {
                 new Input
