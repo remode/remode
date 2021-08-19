@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="/public/default/res/css/default.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="/public/lib/common.js"></script>
+    <script src="modPage.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="nav-container">
+            <div class="toolbar-content">
+                <a class="btn-floating btn-large waves-effect waves-light transparent" onclick="toggleSidebar()">
+                    <em class="material-icons">menu</em>
+                </a>
+                Navigation bar
+            </div>
+        </div>
+        <div id="modContainer"></div>
+    </div>
+    <div class="loading-container">
+        <img src="/public/default/res/images/loading.svg" alt="">
+        <p>Loading Remod...</p>
+    </div>
+    <div class="sidebar-container">
+        <div class="sidebar-exit-area" onclick="toggleSidebar()"></div>
+        <div class="sidebar-menu">
+            <a href="/">
+                <div class="sidebar-menu-logo sidebar-menu-item underline-animator">
+                    Rem<div class="remode-logo-o-container">
+                        <div class="remode-logo-o">o</div>
+                    </div>de
+                    <div class="underline-wrapper">
+                        <div class="underline-animation"></div>
+                    </div>
+                </div>
+            </a>
+
+            <div class="sidebar-menu-item waves-effect">Lorem ipsum dolor sit amet.</div>
+            <div class="sidebar-menu-item waves-effect">Lorem ipsum dolor sit amet.</div>
+            <div class="sidebar-menu-item waves-effect">Lorem ipsum dolor sit amet.</div>
+            <div class="sidebar-menu-item waves-effect">Lorem ipsum dolor sit amet.</div>
+            <div class="sidebar-menu-item waves-effect">Lorem ipsum dolor sit amet.</div>
+            <div class="sidebar-menu-item waves-effect">Lorem ipsum dolor sit amet.</div>
+            <div class="sidebar-menu-item waves-effect">Lorem ipsum dolor sit amet.</div>
+            <div class="sidebar-menu-item waves-effect">Lorem ipsum dolor sit amet.</div>
+            <div class="sidebar-menu-item waves-effect">Lorem ipsum dolor sit amet.</div>
+            <div class="sidebar-menu-item waves-effect">Lorem ipsum dolor sit amet.</div>
+        </div>
+    </div>
+
+    <!-- Custom Elements -->
+    <script src="/public/lib/clickableElement.js"></script>
+</body>
+
+</html>

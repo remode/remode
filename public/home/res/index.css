@@ -48,7 +48,6 @@
 }
 
 .mod-element{
-    height: 70px;
     width: 280px;
     margin: 10px auto;
     padding: 5px;
@@ -90,4 +89,15 @@
 
 .mod-description{
     font-size: 0.8em;
+}
+
+.remode-logo-o-container{
+    width: calc(3rem * var(--window-aspect-ratio));
+    max-width: 4rem;
+    min-width: 2rem;
+    height: 100px;
+}
+
+.remode-logo-o{
+    height: 3.7rem;
 }

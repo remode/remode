@@ -58,7 +58,7 @@ app.get('/modList', function (req, res) {
         files.forEach(modPath => {
             try {
                 let modProp = JSON.parse(fs.readFileSync(`./public/mods/${modPath}/${modPath}.modconfig`, "utf8"));
-                modProp["modPath"] = "/public/mods/" + modPath;
+                modProp["modPath"] = modPath;
                 modList.push(modProp);
             } catch (error) {
                 modList.push(

@@ -18,8 +18,9 @@ function createModElement(modProperties) {
         modElementTemplate.querySelector(".mod-description").title = modProperties.modDescHover;
         if (modProperties.modIcon)
             modElementTemplate.querySelector(".mod-icon").src =
-                `${modProperties.modPath}/${modProperties.modIcon}`;
-        modElementTemplate.querySelector(".mod-link").href = modProperties.modPath;
+                `/public/mods/${modProperties.modPath}/${modProperties.modIcon}`;
+        modElementTemplate.querySelector(".mod-link").href = 
+            `/public/modPage#${modProperties.modPath}`;
 
         return modElementTemplate;
     }

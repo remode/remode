@@ -1,14 +1,13 @@
 const fs = require('fs');
 
-var config =
-{
+var config = {
     password: "",
     bannedIps: JSON.parse(fs.readFileSync("banlist.json", "utf-8")),
-    banUpdateInterval: 10000,   //In milliseconds
+    banUpdateInterval: 10000, //In milliseconds
     listen: {
         port: 3000,
-        hostname: "",           //If hostname is empty, the program will find an IP address 
-        interfaceName: "Wi-Fi"  //using the ip module with the interface name
+        hostname: "", //If hostname is empty, the program will find an IP address 
+        interfaceName: "wlp3s0" //using the ip module with the interface name
     }
 }
 

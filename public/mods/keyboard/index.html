@@ -12,46 +12,50 @@
     <script defer src="./res/js/index.js"></script>
     <script defer src="/public/lib/postData.js"></script>
     <script defer src="/public/lib/sendKey.js"></script>
+    <link rel="stylesheet" href="/public/default/res/css/default.css">
     <link rel="shortcut icon" href="modicon.png" type="image/png">
 </head>
 
 <body>
-    <div class="title-wrapper">
-        <a href="/">
-            <div class="title">
-                Remote Controller
-                <div class="underline-wrapper">
-                    <div class="underline-animation"></div>
+    <div id="modBody">
+
+        <!-- <div class="title-wrapper">
+            <a href="/">
+                <div class="title">
+                    Remote Controller
+                    <div class="underline-wrapper">
+                        <div class="underline-animation"></div>
+                    </div>
                 </div>
-            </div>
-        </a>
-    </div>
-    <div class="main-container">
-        <div class="input">
-            <div class="password-div">
-                <input type="text" id="passwordInput" placeholder="Enter host password">
-            </div>
-            <div class="extra-keys">
-                <div class="toggle-row">
-                    <toggleable-element>Control</toggleable-element>
-                    <toggleable-element>Shift</toggleable-element>
-                    <toggleable-element>Alt</toggleable-element>
-                    <toggleable-element></toggleable-element>
+            </a>
+        </div> -->
+        <div class="main-container">
+            <div class="input">
+                <div class="password-div">
+                    <input type="text" id="passwordInput" placeholder="Enter host password">
                 </div>
-                <div class="button-row">
-                    <clickable-element></clickable-element>
-                    <clickable-element></clickable-element>
-                    <clickable-element></clickable-element>
-                    <clickable-element></clickable-element>
+                <div class="extra-keys">
+                    <div class="toggle-row">
+                        <toggleable-element>Control</toggleable-element>
+                        <toggleable-element>Shift</toggleable-element>
+                        <toggleable-element>Alt</toggleable-element>
+                        <toggleable-element></toggleable-element>
+                    </div>
+                    <div class="button-row">
+                        <clickable-element class="waves-effect"></clickable-element>
+                        <clickable-element class="waves-effect"></clickable-element>
+                        <clickable-element class="waves-effect"></clickable-element>
+                        <clickable-element class="waves-effect"></clickable-element>
+                    </div>
                 </div>
+                <!-- type=email because mobile keyboard suck -->
+                <input type="email" id="keyboardInput" placeholder="Click to open keyboard" autocapitalize="none" autocomplete="off">
             </div>
-            <!-- type=email because mobile keyboard suck -->
-            <input type="email" id="keyboardInput" placeholder="Click to open keyboard" autocapitalize="none"
-                autocomplete="off">
         </div>
+        <script src="/public/lib/toggleElement.js"></script>
+        <script src="/public/lib/clickableElement.js"></script>
+
     </div>
-    <script src="/public/lib/toggleElement.js"></script>
-    <script src="/public/lib/clickableElement.js"></script>
 </body>
 
 </html>
