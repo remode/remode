@@ -12,6 +12,9 @@ function loadMods() {
 
 function createModElement(modProperties) {
     if ('content' in document.createElement('template')) {
+        /**
+         * @type {HTMLTemplateElement}
+         */
         let modElementTemplate = document.getElementById("modElementTemplate").content.cloneNode(true);
         modElementTemplate.querySelector(".mod-title-text").innerText = modProperties.modName;
         modElementTemplate.querySelector(".mod-description").innerText = modProperties.modDesc;
