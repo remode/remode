@@ -11,7 +11,6 @@ class ToggleableElement extends HTMLElement {
     set state(val) {
         if (this.getAttribute("state") !== val)
             this.setAttribute("state", val === ("on" || "off") ? val : "off");
-        return this.getAttribute("state")
     }
 
     switchState() {
