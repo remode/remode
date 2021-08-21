@@ -1,5 +1,6 @@
 {
     "files.associations": {
         "*.modconfig":"json"
-    }
+    },
+    "svg.preview.background": "black"
 }

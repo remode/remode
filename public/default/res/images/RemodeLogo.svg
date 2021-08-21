@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="600mm"
+   height="180mm"
+   viewBox="0 0 600 180"
+   version="1.1"
+   id="svg73040"
+   inkscape:version="1.1 (c4e8f9ed74, 2021-05-24)"
+   sodipodi:docname="RemodeLogo.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview73042"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="true"
+     units="mm"
+     inkscape:zoom="0.32"
+     inkscape:cx="1560.9375"
+     inkscape:cy="264.0625"
+     inkscape:window-width="1366"
+     inkscape:window-height="768"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     height="200mm"
+     width="647mm">
+    <inkscape:grid
+       type="xygrid"
+       id="grid73044"
+       empspacing="16"
+       spacingx="1.0583333"
+       spacingy="1.0583333" />
+  </sodipodi:namedview>
+  <defs
+     id="defs73037">
+    <rect
+       x="0"
+       y="0"
+       width="2464"
+       height="608"
+       id="rect85160" />
+    <rect
+       x="7552"
+       y="640"
+       width="128"
+       height="128"
+       id="rect77366" />
+    <rect
+       x="0"
+       y="0"
+       width="6144"
+       height="768"
+       id="rect75974" />
+  </defs>
+  <g
+     inkscape:label="Katman 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     style="display:inline">
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,4.233374,29.633334)"
+       id="text75972"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect75974);fill:var(--primary-color);fill-opacity:1;stroke:none" />
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,4.233374,29.633334)"
+       id="text77364"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect77366);fill:var(--primary-color);fill-opacity:1;stroke:none" />
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,3.817085,29.385778)"
+       id="text85158"
+       style="font-style:normal;font-weight:normal;font-size:600px;line-height:100%;font-family:sans-serif;white-space:pre;shape-inside:url(#rect85160);fill:var(--primary-color);fill-opacity:1;stroke:none"><tspan
+         x="0"
+         y="476.71233"
+         id="tspan151486"><tspan
+           style="font-family:Roboto;-inkscape-font-specification:Roboto"
+           id="tspan151484">Remode</tspan></tspan></text>
+    <rect
+       style="fill:var(--primary-color);stroke-width:0.264583"
+       id="rect146420"
+       width="84.666664"
+       height="135.46666"
+       x="325.96671"
+       y="29.633333"
+       ry="16.933332" />
+    <rect
+       style="fill:#80b3ff;stroke-width:0.264583"
+       id="rect146482"
+       width="76.199959"
+       height="127.00001"
+       x="330.20004"
+       y="33.866665"
+       ry="12.7" />
+    <path
+       style="fill:none;stroke:var(--primary-color);stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 389.46666,16.933333 c 0,0 0,0 0,0 z"
+       id="path149925" />
+    <path
+       style="fill:none;stroke:var(--primary-color);stroke-width:1.6875px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 389.46666,22.224999 v 0 c 28.57499,0 28.57499,28.574999 28.57499,28.574999"
+       id="path149927"
+       sodipodi:nodetypes="ccc" />
+    <path
+       style="fill:none;stroke:var(--primary-color);stroke-width:2.0625px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 389.46665,15.874999 v 0 c 34.92499,0 34.92499,34.924999 34.92499,34.924999"
+       id="path150450"
+       sodipodi:nodetypes="ccc" />
+    <path
+       style="fill:none;stroke:var(--primary-color);stroke-width:2.40604px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 389.46665,10.583333 v 0 c 41.27501,0 41.27501,40.216665 41.27501,40.216665"
+       id="path150532"
+       sodipodi:nodetypes="ccc" />
+    <path
+       style="fill:none;stroke:var(--primary-color);stroke-width:2.78107px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 389.46665,4.2333333 v 0 c 47.625,0 47.625,46.5666647 47.625,46.5666647"
+       id="path150534"
+       sodipodi:nodetypes="ccc" />
+  </g>
+</svg>
