@@ -5,13 +5,16 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "type": "node",
+            "command": "deno run --allow-net --allow-read app.ts",
+            "name": "Server Launch: Deno Launch Remode",
             "request": "launch",
-            "name": "Launch Program",
-            "skipFiles": [
-                "<node_internals>/**"
-            ],
-            "program": "."
+            "type": "node-terminal"
+        },
+        {
+            "command": "denon run --allow-net --allow-read app.ts",
+            "name": "Server Debug: Denon Launch Remode",
+            "request": "launch",
+            "type": "node-terminal"
         }
     ]
 }
