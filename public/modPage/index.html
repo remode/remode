@@ -15,24 +15,39 @@
 
 <body>
     <div class="main-container">
-        <div class="nav-container">
-            <div class="toolbar-content">
-                <a class="btn-floating btn-large waves-effect waves-light transparent" onclick="toggleSidebar()">
-                    <em class="material-icons">menu</em>
-                </a>
-                Navigation bar
+        <nav>
+            <div class="nav-wrapper grey darken-4 valign-wrapper">
+                <a data-target="slide-out"
+                    class="sidenav-trigger show-on-large waves-effect waves-light btn-floating btn-large transparent"><i
+                        class="material-icons">menu</i></a>
             </div>
-        </div>
+        </nav>
+        <ul id="slide-out" class="sidenav grey darken-4 white-text">
+            <li>
+                <div class="title underline-animator">
+                    <svg>
+                        <use xlink:href="/public/default/res/images/Remode.svg#remodeLogo" />
+                    </svg>
+                </div>
+            </li>
+            <li>
+                <div class="divider"></div>
+            </li>
+            <li>
+                <a href="/" class="white-text"> <i class="material-icons" aria-hidden="true">home</i> Home </a>
+            </li>
+            <li><a class="">Menu Element 1</a></li>
+            <li><a class="">Menu Element 2</a></li>
+            <li><a class="waves-effect waves-light">Menu Element 3</a></li>
+            <li><a class="subheader">Menu Element 4</a></li>
+        </ul>
         <div id="modContainer"></div>
     </div>
     <div class="loading-container">
         <img src="/public/default/res/images/loading.svg" alt="">
         <p>Loading Remod...</p>
     </div>
-    <div class="sidebar-container">
-        <div class="sidebar-exit-area" onclick="toggleSidebar()"></div>
-        <div class="sidebar-menu">
-            <a href="/">
+    <!-- <a href="/">
                 <div class="sidebar-menu-logo sidebar-menu-item underline-animator">
                     Rem<div class="remode-logo-o-container">
                         <div class="remode-logo-o">o</div>
@@ -41,20 +56,7 @@
                         <div class="underline-animation"></div>
                     </div>
                 </div>
-            </a>
-
-            <div class="sidebar-menu-item waves-effect">Lorem ipsum dolor sit amet.</div>
-            <div class="sidebar-menu-item waves-effect">Lorem ipsum dolor sit amet.</div>
-            <div class="sidebar-menu-item waves-effect">Lorem ipsum dolor sit amet.</div>
-            <div class="sidebar-menu-item waves-effect">Lorem ipsum dolor sit amet.</div>
-            <div class="sidebar-menu-item waves-effect">Lorem ipsum dolor sit amet.</div>
-            <div class="sidebar-menu-item waves-effect">Lorem ipsum dolor sit amet.</div>
-            <div class="sidebar-menu-item waves-effect">Lorem ipsum dolor sit amet.</div>
-            <div class="sidebar-menu-item waves-effect">Lorem ipsum dolor sit amet.</div>
-            <div class="sidebar-menu-item waves-effect">Lorem ipsum dolor sit amet.</div>
-            <div class="sidebar-menu-item waves-effect">Lorem ipsum dolor sit amet.</div>
-        </div>
-    </div>
+            </a> -->
 
     <!-- Custom Elements -->
     <script src="/public/lib/clickableElement.js"></script>

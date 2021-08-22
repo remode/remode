@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="remodeLogo">
+        <style>
+            #remodeLogo {
+                --primary-color: #eee;
+                --logo-screen-color: rgb(76, 201, 243);
+            }
+        </style>
+        <text x="0.2em" y="1.3em" textLength="2em" font-family="Roboto" font-weight="lighter"
+            fill="var(--primary-color)">
+            Rem
+        </text>
+        <svg x="2.22em" y="0.2em">
+            <rect width="0.6em" height="0.9em" rx="0.05em" x="0.04em" y="0.2em" stroke="var(--primary-color)" stroke-width="0.04em"
+                fill="var(--logo-screen-color)" />
+        </svg>
+        <text x="2.95em" y="1.3em" textLength="1.15em" font-family="Roboto Mono" font-weight="lighter"
+            fill="var(--primary-color)">
+            de
+        </text>
+    </g>
+</svg>

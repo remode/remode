@@ -62,69 +62,6 @@ body {
     border: 0px;
 }
 
-.sidebar-container {
-    --sidebar-width: 240px;
-    --sidebar-offset: 1;
-    /* --sidebar-offset: -1 is closed, 1 is open*/
-    transition: left 200ms;
-    position: absolute;
-    top: 0;
-    left: calc( var(--sidebar-width) * (var(--sidebar-offset) / 2 - 0.5));
-    width: var(--sidebar-width);
-    height: 100vh;
-    background-color: aqua;
-}
-
-.sidebar-exit-area {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100vw;
-    z-index: calc(100 * var(--sidebar-offset));
-    opacity: calc(1 * (var(--sidebar-offset) / 2 + 0.5));
-    background-color: rgba(196, 217, 255, 0.103);
-}
-
-.sidebar-menu {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background-color: #363636;
-    z-index: 101;
-    display: flex;
-    flex-direction: column;
-}
-
-.sidebar-menu-item {
-    width: auto;
-    margin: 0px 16px;
-    height: 40px;
-    background-color: #fff0;
-    transition: background-color 200ms;
-}
-
-.sidebar-menu-item:hover {
-    background-color: #fff2;
-}
-
-.sidebar-menu-logo {
-    margin: 16px 8px;
-    text-align: center;
-    font-size: 2rem;
-}
-
-.sidebar-menu-logo:hover{
-    background-color: #eee0;
-}
-
-.sidebar-menu-item:nth-child(2) {
-    margin-top: 8px;
-}
-
-.remode-logo-o-container{
-    font-size: 1.6rem;
-}
 
 
 /* .loading-three-dots{

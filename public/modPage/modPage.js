@@ -27,3 +27,7 @@ function toggleSidebar(){
         getComputedStyle(sidebar).getPropertyValue("--sidebar-offset")*-1);
 }
 
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.sidenav');
+    M.Sidenav.init(elems, {});
+  });

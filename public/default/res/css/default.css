@@ -1,6 +1,11 @@
 @import url(/public/lib/Roboto.css);
 @import url(https://fonts.googleapis.com/icon?family=Material+Icons);
-@import url(https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css);
+@import url(https://cdn.jsdelivr.net/npm/@materializecss/materialize@1.1.0-alpha/dist/css/materialize.min.css);
+
+:root{
+    --primary-color: #eee;
+    --logo-screen-color: rgb(76, 201, 243);
+}
 
 *{    
     color: #eeeeee;
@@ -39,13 +44,21 @@ body{
 .title {
     font-family: Roboto;
     font-weight: 100;
-    font-size: 65px;
+    font-size: 70px;
     text-align: center;
+}
+
+.title svg{
+    height: 1.4em;
 }
 
 .underline-wrapper{
     display: grid;
     place-items: center;
+}
+
+.underline-animation-wrapper{
+    width: 100%;
 }
 
 .underline-animation{
@@ -55,6 +68,8 @@ body{
     width: 0%;
     transition-duration: 400ms;
     transition-timing-function: ease;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .underline-animator:hover .underline-animation{
@@ -63,7 +78,6 @@ body{
 
 a {
     text-decoration: none;
-    color: inherit;
 }
 
 /* FIXME: Fix the stupid logo shit div sizing cool responsive*/
@@ -87,3 +101,4 @@ a {
     top: 17px; */
     height: 100%;
 }
+
