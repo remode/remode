@@ -1,8 +1,6 @@
-const fs = require('fs');
-
 var config = {
     password: "",
-    bannedIps: JSON.parse(fs.readFileSync("banlist.json", "utf-8")),
+    bannedIps: JSON.parse(Deno.readTextFileSync("banlist.json")) || [],
     banUpdateInterval: 10000, //In milliseconds
     listen: {
         port: 3000,
@@ -11,4 +9,4 @@ var config = {
     }
 }
 
-module.exports = config;
+export default config
