@@ -1,12 +1,25 @@
 import { opine, serveStatic } from "https://deno.land/x/opine/mod.ts";
 import { warning, error } from "https://deno.land/std/log/mod.ts";
+import { ipList } from "https://deno.land/x/linux_ip/mod.ts";
 
 import config from "./config.ts"
+
+const port = config.listen.port
+const hostname = config.listen.hostname || ((await ipList()).find((val) => {
+    return (Array.isArray(config.listen.interfaceNames)) ?
+        config.listen.interfaceNames.includes(val.name) :
+        config.listen.interfaceNames === val.name
+})?.ipv4)
+
+if (hostname == undefined) {
+    throw new Error("No matching ip address for the list of hostnames specified found");
+
+}
 
 const app = opine();
 
 app
-    .use(async (_req, _res, next)=>{
+    .use(async (_req, _res, next) => {
         try {
             await next();
         } catch (err) {
@@ -57,7 +70,7 @@ app
         res.send(JSON.stringify(modList, null, 2))
     })
 
-app.listen({ port: 8080 }, () => { console.log("http://localhost:8080") })
+app.listen({ port: port, hostname: hostname }, () => { console.log(`http://${hostname}:${port}`) })
 
 // TODO: Implement POST endpoints and better authentication
 // Old server code:
