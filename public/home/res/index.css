@@ -91,6 +91,15 @@
     font-size: 0.8em;
 }
 
+.mod-link.card-panel, .title svg{
+    transform: scale(1);
+    transition: transform 300ms;
+}
+
+.mod-link.card-panel:hover, .title svg:hover{
+    transform: scale(1.01);
+}
+
 .remode-logo-o-container{
     width: calc(3rem * var(--window-aspect-ratio));
     max-width: 4rem;
