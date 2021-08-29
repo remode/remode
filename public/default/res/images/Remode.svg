@@ -14,7 +14,7 @@
             <rect width="0.6em" height="0.9em" rx="0.05em" x="0.04em" y="0.2em" stroke="var(--primary-color)" stroke-width="0.04em"
                 fill="var(--logo-screen-color)" />
         </svg>
-        <text x="2.95em" y="1.3em" textLength="1.15em" font-family="Roboto Mono" font-weight="lighter"
+        <text x="2.95em" y="1.3em" textLength="1.1em" font-family="Roboto" font-weight="lighter"
             fill="var(--primary-color)">
             de
         </text>
