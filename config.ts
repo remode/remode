@@ -1,7 +1,7 @@
 const config: {
     listen: {
         port: number; hostname: string; interfaceNames: string | string[]
-    }; bannedIps: string[]; password?: string; banUpdateInterval?: number;
+    }; bannedIps: string[]; password?: string; banUpdateInterval?: number; disableControlPanel?: boolean;
 } =
 {
     password: "",
@@ -10,8 +10,9 @@ const config: {
     listen: {
         port: 3000,
         hostname: "", //If hostname is empty, remode will find an IP address using interfaceNames
-        interfaceNames: ["Wi-Fi","wlan0","wlp3s0"] //interface name/names that remode will attempt to listen on
-    }
+        interfaceNames: ["Wi-Fi", "wlan0", "wlp3s0"] //interface name/names that remode will attempt to listen on
+    },
+    disableControlPanel: false
 }
 
 export default config;

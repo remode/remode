@@ -2,7 +2,9 @@ import { opine, serveStatic } from "https://deno.land/x/opine/mod.ts";
 import { warning, error } from "https://deno.land/std/log/mod.ts";
 import { ipList } from "https://deno.land/x/linux_ip/mod.ts";
 import { keyboard } from "https://deno.land/x/xdotool@v1.0.1/mod.ts";
+import { qrcode } from "https://deno.land/x/qrcode/mod.ts";
 
+import { panel } from "./admin.ts";
 import config from "./config.ts"
 
 const port = config.listen.port
@@ -79,7 +81,7 @@ app
 
         console.log(body.passwd == config.password && !config.bannedIps.includes(req.ip))
         console.log(req.ip)
-        
+
         if (body.passwd == config.password && !config.bannedIps.includes(req.ip)) {
             console.log(`keyInput "${body.value}" from ${req.ip}`);
             keyboard.type(body.value)
@@ -91,7 +93,20 @@ app
 
     })
 
-app.listen({ port: port, hostname: hostname }, () => { console.log(`http://${hostname}:${port}`) })
+Deno.writeTextFileSync("./admin/tmp/info.txt","")
+
+app.listen({ port: port, hostname: hostname }, async () => {
+    Deno.writeTextFileSync("./admin/tmp/info.txt", 
+        `http://${hostname}:${port}\n${String(await qrcode(`http://${hostname}:${port}`))}\n${config.password}` 
+    )
+    console.log(`Remode server running at http://${hostname}:${port}`)
+})
+
+if (!config.disableControlPanel)
+    panel.listen({ hostname: "localhost", port: 3000 }, () => {
+        console.log("Remode admin panel running at http://localhost:3000")
+    })
+
 
 // TODO: Implement POST endpoints and better authentication
 // Old server code:

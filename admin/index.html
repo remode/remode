@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remode Admin Panel</title>
+</head>
+
+<body style="background-color: gray; filter: brightness(50%); display: grid; justify-content: center;">
+    <h1>Admin Panel</h1>
+    <button onclick="document.getElementById('qrImage').style.visibility = 'visible'">Show QR Code</button>
+    <img alt="qrcode" id="qrImage" width="300px" style="image-rendering: pixelated; visibility: collapse;">
+    <button onclick="document.getElementById('passwd').style.visibility = 'visible'">Show Password</button>
+    <input id="passwd" type="text" disabled style="visibility: collapse;">
+</body>
+
+<script type="module">
+    let info = await((await fetch("/tmp/info.txt")).text())
+    info = info.split("\n")
+
+    document.getElementById("qrImage").src = info[1];
+    document.getElementById("passwd").value = info[2];
+
+</script>
+
+</html>
