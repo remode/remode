@@ -1,6 +1,7 @@
 import { opine, serveStatic } from "https://deno.land/x/opine/mod.ts";
 import { warning, error } from "https://deno.land/std/log/mod.ts";
 import { ipList } from "https://deno.land/x/linux_ip/mod.ts";
+import { keyboard } from "https://deno.land/x/xdotool@v1.0.1/mod.ts";
 
 import config from "./config.ts"
 
@@ -68,6 +69,26 @@ app
 
         res.type("application/json")
         res.send(JSON.stringify(modList, null, 2))
+    })
+    .post("/post/keyboard", async (req, res, next) => {
+        // Determine the size of the message and therefore how big a buffer we need.
+        const contentLength = parseInt(req.headers.get("content-length") ?? "0");
+        const buffer = new Uint8Array(contentLength);
+        await req.body.read(buffer);
+        const body = JSON.parse(new TextDecoder().decode(buffer))
+
+        console.log(body.passwd == config.password && !config.bannedIps.includes(req.ip))
+        console.log(req.ip)
+        
+        if (body.passwd == config.password && !config.bannedIps.includes(req.ip)) {
+            console.log(`keyInput "${body.value}" from ${req.ip}`);
+            keyboard.type(body.value)
+            res.setStatus(200)
+        }
+        else res.setStatus(401)
+        res.send("[]")
+        console.log(body)
+
     })
 
 app.listen({ port: port, hostname: hostname }, () => { console.log(`http://${hostname}:${port}`) })
