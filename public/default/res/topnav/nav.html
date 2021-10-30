@@ -1,0 +1,50 @@
+<script src="https://cdn.jsdelivr.net/npm/@materializecss/materialize@1.1.0-alpha/dist/js/materialize.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/public/default/res/css/default.css">
+
+<nav>
+    <div class="nav-wrapper grey darken-4 valign-wrapper">
+        <a data-target="slide-out"
+            class="sidenav-trigger show-on-large waves-effect waves-light btn-floating btn-large transparent"><i
+                class="material-icons">menu</i>
+        </a>
+
+        <!-- TODO: Add logo/text on the navbar -->
+        <!-- <div class="title underline-animator brand-logo center">
+            Remote Controller
+            <div class="underline-wrapper">
+                <div class="underline-animation"></div>
+            </div>
+        </div> -->
+
+
+    </div>
+</nav>
+<ul id="slide-out" class="sidenav grey darken-4 white-text">
+    <li>
+        <div class="title underline-animator">
+            <svg>
+                <use xlink:href="/public/default/res/images/Remode.svg#remodeLogo" />
+            </svg>
+        </div>
+    </li>
+    <li>
+        <div class="divider"></div>
+    </li>
+    <li>
+        <a href="/" class="white-text"> <i class="material-icons" aria-hidden="true">home</i> Home </a>
+    </li>
+    <li><a class="">Menu Element 1</a></li>
+    <li><a class="">Menu Element 2</a></li>
+    <li><a class="waves-effect waves-light">Menu Element 3</a></li>
+    <li><a class="subheader">Menu Element 4</a></li>
+</ul>
+<div id="modContainer"></div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var elems = document.querySelectorAll('.sidenav');
+        M.Sidenav.init(elems, {});
+    });
+</script>

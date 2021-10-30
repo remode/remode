@@ -1,7 +1,7 @@
 import { opine, serveStatic } from "https://deno.land/x/opine/mod.ts";
 import { warning, error } from "https://deno.land/std/log/mod.ts";
 import { ipList } from "https://deno.land/x/linux_ip/mod.ts";
-import { keyboard } from "https://deno.land/x/xdotool@v1.0.1/mod.ts";
+import { keyboard } from "https://raw.githubusercontent.com/remode/xdotoolJS/master/mod.ts";
 import { qrcode } from "https://deno.land/x/qrcode/mod.ts";
 
 import { panel } from "./admin.ts";
@@ -72,7 +72,15 @@ app
         res.type("application/json")
         res.send(JSON.stringify(modList, null, 2))
     })
-    .post("/post/keyboard", async (req, res, next) => {
+    .get("/m/:modid", async (req, res, next) => {
+        await res.send(
+            `
+            ${Deno.readTextFileSync(`${Deno.cwd()}/public/default/res/topnav/nav.html`)}
+            ${Deno.readTextFileSync(`${Deno.cwd()}/public/mods/${req.params.modid}/index.html`)}
+            `
+        );
+    })
+    .post("/post/keyboard", async (req, res) => {
         // Determine the size of the message and therefore how big a buffer we need.
         const contentLength = parseInt(req.headers.get("content-length") ?? "0");
         const buffer = new Uint8Array(contentLength);
@@ -93,11 +101,11 @@ app
 
     })
 
-Deno.writeTextFileSync("./admin/tmp/info.txt","")
+Deno.writeTextFileSync("./admin/tmp/info.txt", "")
 
 app.listen({ port: port, hostname: hostname }, async () => {
-    Deno.writeTextFileSync("./admin/tmp/info.txt", 
-        `http://${hostname}:${port}\n${String(await qrcode(`http://${hostname}:${port}`))}\n${config.password}` 
+    Deno.writeTextFileSync("./admin/tmp/info.txt",
+        `http://${hostname}:${port}\n${String(await qrcode(`http://${hostname}:${port}`))}\n${config.password}`
     )
     console.log(`Remode server running at http://${hostname}:${port}`)
 })
@@ -106,18 +114,3 @@ if (!config.disableControlPanel)
     panel.listen({ hostname: "localhost", port: 3000 }, () => {
         console.log("Remode admin panel running at http://localhost:3000")
     })
-
-
-// TODO: Implement POST endpoints and better authentication
-// Old server code:
-// app.post('/post/keyboard', (req, res) => {
-//     let body = req.body;
-//     console.log(body)
-//     if (body.passwd === password && !bannedIps.includes(req.socket.remoteAddress)) {
-//         console.log(`keyInput "${body.value}" from ${req.socket.remoteAddress}`);
-//         spawn("python3", ["./pythonScripts/keypress.py", body.value]).on("exit", (code) => {
-//             res.status(code === 0 ? 200 : 500).send(["ok", code]);
-//         });
-//     }
-// });
-

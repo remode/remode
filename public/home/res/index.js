@@ -20,7 +20,7 @@ function createModElement(modProperties) {
             modElementTemplate.querySelector(".mod-icon").src =
                 `/public/mods/${modProperties.modPath}/${modProperties.modIcon}`;
         modElementTemplate.querySelector(".mod-link").href = 
-            `/public/modPage#${modProperties.modPath}`;
+            `/m/${modProperties.modPath}`;
 
         return modElementTemplate;
     }
