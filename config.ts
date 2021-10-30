@@ -9,7 +9,7 @@ const config: {
     banUpdateInterval: 10000, //In milliseconds
     listen: {
         port: 3000,
-        hostname: "", //If hostname is empty, remode will find an IP address using interfaceNames
+        hostname: "192.168.1.106", //If hostname is empty, remode will find an IP address using interfaceNames
         interfaceNames: ["Wi-Fi", "wlan0", "wlp3s0"] //interface name/names that remode will attempt to listen on
     },
     disableControlPanel: false
