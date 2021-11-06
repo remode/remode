@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muse Dash Controller</title>
+    <script src="https://cdn.jsdelivr.net/npm/@materializecss/materialize@1.1.0-alpha/dist/js/materialize.min.js"></script>
+    <script defer src="/public/lib/sendKey.js"></script>
+    <script defer src="/public/lib/postData.js"></script>
+</head>
+
+<body>
+
+    <style>
+        .keys {
+            padding: 20px;
+            width: 100%;
+            height: 200px;
+            display: flex;
+        }
+
+        .keys>* {
+            flex: 1;
+            float: right;
+        }
+
+        .keys>clickable-element {
+            background-color: #fff5;
+            transition: 100ms;
+            border: black 1px solid;
+        }
+
+        .keys>clickable-element[state="on"] {
+            background-color: #fffa;
+        }
+    </style>
+
+    <div class="keys">
+        <clickable-element>D</clickable-element>
+        <clickable-element>F</clickable-element>
+        <div></div>
+        <clickable-element>J</clickable-element>
+        <clickable-element>K</clickable-element>
+    </div>
+
+    <script src="/public/lib/clickableElement.js"></script>
+
+    <script>
+        const keyValues = ["d", "f", "j", "k"];
+        document.querySelectorAll(".keys > clickable-element").forEach((e, i) => {
+            // e.classList.add("waves-effect")
+            e.onclickstart = () => {sendKey(keyValues[i], "", { isDown: true }) }
+            e.onclickend = () => { sendKey(keyValues[i], "", { isUp: true }) }
+        })
+    </script>
+</body>
+
+</html>

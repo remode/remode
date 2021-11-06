@@ -1,7 +1,7 @@
 import { opine, serveStatic } from "https://deno.land/x/opine/mod.ts";
 import { warning, error } from "https://deno.land/std/log/mod.ts";
 import { ipList } from "https://deno.land/x/linux_ip/mod.ts";
-import { keyboard } from "https://raw.githubusercontent.com/remode/xdotoolJS/master/mod.ts";
+import { keyboard, mouse } from "https://raw.githubusercontent.com/remode/xdotoolJS/master/mod.ts";
 import { qrcode } from "https://deno.land/x/qrcode/mod.ts";
 
 import { panel } from "./admin.ts";
@@ -92,13 +92,36 @@ app
 
         if (body.passwd == config.password && !config.bannedIps.includes(req.ip)) {
             console.log(`keyInput "${body.value}" from ${req.ip}`);
-            keyboard.type(body.value)
+            if(body.options.isDown)
+                keyboard.keyDown(body.value)
+            else if(body.options.isUp)
+                keyboard.keyUp(body.value)
+            else
+                keyboard.type(body.value)
             res.setStatus(200)
         }
         else res.setStatus(401)
         res.send("[]")
         console.log(body)
+    })
+    .post("/post/mouse", async (req, res) => {
+        // Determine the size of the message and therefore how big a buffer we need.
+        const contentLength = parseInt(req.headers.get("content-length") ?? "0");
+        const buffer = new Uint8Array(contentLength);
+        await req.body.read(buffer);
+        const body = JSON.parse(new TextDecoder().decode(buffer))
 
+        console.log(body.passwd == config.password && !config.bannedIps.includes(req.ip))
+        console.log(req.ip)
+
+        if (body.passwd == config.password && !config.bannedIps.includes(req.ip)) {
+            console.log(`mouse input "${body.value}" from ${req.ip}`);
+            mouse.mouseMoveRelative(body.value.x, body.value.y);
+            res.setStatus(200)
+        }
+        else res.setStatus(401)
+        res.send("[]")
+        console.log(body)
     })
 
 Deno.writeTextFileSync("./admin/tmp/info.txt", "")

@@ -22,18 +22,22 @@ class ClickableElement extends HTMLElement {
         this.onclickstart = () => { }
         this.onclickend = () => { }
 
-        this.addEventListener("mousedown", () => {
-            this.state = "on";
-        });
-        this.addEventListener("touchstart", () => {
-            this.state = "on";
-        });
-        this.addEventListener("mouseup", () => {
-            this.state = "off";
-        });
-        this.addEventListener("touchend", () => {
-            this.state = "off";
-        });
+        if ('ontouchstart' in window) {
+            this.addEventListener("touchstart", () => {
+                this.state = "on";
+            });
+            this.addEventListener("touchend", () => {
+                this.state = "off";
+            });
+        }
+        else {
+            this.addEventListener("mousedown", () => {
+                this.state = "on";
+            });
+            this.addEventListener("mouseup", () => {
+                this.state = "off";
+            });
+        }
     }
 
     static get observedAttributes() {
