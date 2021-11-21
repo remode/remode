@@ -115,7 +115,7 @@ app
         console.log(req.ip)
 
         if (body.passwd == config.password && !config.bannedIps.includes(req.ip)) {
-            console.log(`mouse input "${body.value}" from ${req.ip}`);
+            console.log(`mouse input "${JSON.stringify(body.value)}" from ${req.ip}`);
             mouse.mouseMoveRelative(body.value.x, body.value.y);
             res.setStatus(200)
         }
@@ -135,7 +135,8 @@ app
         if (body.passwd == config.password && !config.bannedIps.includes(req.ip)) {
             console.log(`mouse button input "${body.value}" from ${req.ip}`);
             if(body.options.isDown)
-                mouse.mouseDown(body.value)
+                console.log(await mouse.mouseDown(body.value))
+                // console.log(body.value)
             else if(body.options.isUp)
                 mouse.mouseUp(body.value)
             else
