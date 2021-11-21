@@ -1,0 +1,30 @@
+#left,
+#right,
+#top,
+#bottom {
+    border: 1px solid #ccc4;
+}
+
+#top clickable-element {
+    flex: 1;
+    background-color: darkslateblue;
+    border-radius: 10px;
+    transition: background-color 0.5s;
+    margin: auto 10px;
+    height: 75px;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    font-weight: normal;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+#top clickable-element:nth-child(1),
+#top clickable-element:nth-child(5) {
+    flex: 0.7;
+}
+
+#top clickable-element[state="on"] {
+    background-color: slateblue;
+}

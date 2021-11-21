@@ -123,6 +123,29 @@ app
         res.send("[]")
         console.log(body)
     })
+    .post("/post/button", async (req, res) => {
+        const contentLength = parseInt(req.headers.get("content-length") ?? "0");
+        const buffer = new Uint8Array(contentLength);
+        await req.body.read(buffer);
+        const body = JSON.parse(new TextDecoder().decode(buffer))
+
+        console.log(body.passwd == config.password && !config.bannedIps.includes(req.ip))
+        console.log(req.ip)
+
+        if (body.passwd == config.password && !config.bannedIps.includes(req.ip)) {
+            console.log(`mouse button input "${body.value}" from ${req.ip}`);
+            if(body.options.isDown)
+                mouse.mouseDown(body.value)
+            else if(body.options.isUp)
+                mouse.mouseUp(body.value)
+            else
+                mouse.click(body.value)
+            res.setStatus(200)
+        }
+        else res.setStatus(401)
+        res.send("[]")
+        console.log(body)
+    })
 
 Deno.writeTextFileSync("./admin/tmp/info.txt", "")
 
