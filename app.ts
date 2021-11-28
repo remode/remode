@@ -92,9 +92,9 @@ app
 
         if (body.passwd == config.password && !config.bannedIps.includes(req.ip)) {
             console.log(`keyInput "${body.value}" from ${req.ip}`);
-            if(body.options.isDown)
+            if (body.options.isDown)
                 keyboard.keyDown(body.value)
-            else if(body.options.isUp)
+            else if (body.options.isUp)
                 keyboard.keyUp(body.value)
             else
                 keyboard.type(body.value)
@@ -116,7 +116,7 @@ app
 
         if (body.passwd == config.password && !config.bannedIps.includes(req.ip)) {
             console.log(`mouse input "${JSON.stringify(body.value)}" from ${req.ip}`);
-            mouse.mouseMoveRelative(body.value.x, body.value.y);
+            mouse.mouseMoveRelative(body.value.x, body.value.y, undefined, body.options.usePolar);
             res.setStatus(200)
         }
         else res.setStatus(401)
@@ -134,10 +134,10 @@ app
 
         if (body.passwd == config.password && !config.bannedIps.includes(req.ip)) {
             console.log(`mouse button input "${body.value}" from ${req.ip}`);
-            if(body.options.isDown)
+            if (body.options.isDown)
                 console.log(await mouse.mouseDown(body.value))
-                // console.log(body.value)
-            else if(body.options.isUp)
+            // console.log(body.value)
+            else if (body.options.isUp)
                 mouse.mouseUp(body.value)
             else
                 mouse.click(body.value)

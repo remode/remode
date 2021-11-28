@@ -27,7 +27,7 @@
         integrity="sha512-7PRZndBOTMkYqbGwO6dvNDozKEwaJYu3zPLoLv0rzOLMPQ2PVh6yaevCZOUL8+/n+A16fnLYEBKAlYXgMBn54w=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
-        const mSensitivity = 8;
+        const mSensitivity = 4;
 
         var mouseJoy = nipplejs.create({
             zone: document.getElementById('left'),
@@ -40,7 +40,8 @@
         mouseJoy.on("move", (e, d) => {
             postData("/post/mouse", {
                 passwd: "",
-                value: { x: Math.round(d.vector.x * mSensitivity), y: -Math.round(d.vector.y * mSensitivity) }
+                value: { x: 90 - d.angle.degree, y: d.force * mSensitivity },
+                options: { usePolar: true }
             })
         })
 
